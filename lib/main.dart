@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tutorial/bloc/user_bloc.dart';
 import 'package:flutter_tutorial/screens/add_user.dart';
 import 'package:flutter_tutorial/screens/home_screen.dart';
 
@@ -18,7 +20,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: BottomNav(),
+      home: BlocProvider(
+        create: (context) => UserBloc(),
+        child: BottomNav(),
+      ),
     );
   }
 }
