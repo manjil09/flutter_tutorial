@@ -20,15 +20,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.builder(
-        itemCount: users.length,
-        itemBuilder: (context, index) {
-          return ProfileCard(
-            user: users[index],
-          );
-        },
-      ),
+    return ListView.builder(
+      itemCount: users.length,
+      itemBuilder: (context, index) {
+        return ProfileCard(
+          user: users[index],
+        );
+      },
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/screens/add_user.dart';
 import 'package:flutter_tutorial/screens/home_screen.dart';
 
 void main() {
@@ -30,23 +31,23 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int _currentIndex = 0;
+  int currentIndex = 0;
 
-  final List<Widget> _screens = [
+  final List<Widget> screens = [
     HomeScreen(),
-    HomeScreen(),
+    AddUser(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
-      _currentIndex = index;
+      currentIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
+      body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -55,10 +56,10 @@ class _BottomNavState extends State<BottomNav> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: 'Business',
+            label: 'Add User',
           ),
         ],
-        currentIndex: _currentIndex,
+        currentIndex: currentIndex,
         selectedItemColor: Colors.deepPurple,
         onTap: _onItemTapped,
       ),
