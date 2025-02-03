@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/models/user.dart';
 
 class ProfileCard extends StatelessWidget {
-  final String name;
-  final String bio;
-  final String imageUrl;
+  final User user;
 
-  const ProfileCard(
-      {super.key,
-      required this.name,
-      required this.bio,
-      required this.imageUrl});
+  const ProfileCard({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -20,24 +15,24 @@ class ProfileCard extends StatelessWidget {
         child: Column(
           children: [
             CircleAvatar(
-              backgroundImage: NetworkImage(imageUrl),
+              backgroundImage: NetworkImage(user.imageUrl),
               radius: 50,
             ),
             SizedBox(height: 16),
             Text(
-              name,
+              user.name,
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
             Text(
-              bio,
+              user.bio,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             SizedBox(height: 16),
             ElevatedButton(
                 onPressed: () {
-                  print("LIke ${name}");
+                  print("LIke ${user.name}");
                 },
                 child: Text('Like')),
           ],
