@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tutorial/bloc/user_bloc.dart';
 import 'package:flutter_tutorial/screens/add_user.dart';
+import 'package:flutter_tutorial/screens/carousel_screen.dart';
 import 'package:flutter_tutorial/screens/home_screen.dart';
 
 void main() {
@@ -40,6 +41,7 @@ class _BottomNavState extends State<BottomNav> {
 
   final List<Widget> screens = [
     HomeScreen(),
+    CarouselScreen(),
     AddUser(),
   ];
 
@@ -60,7 +62,11 @@ class _BottomNavState extends State<BottomNav> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.view_carousel_rounded),
+            label: 'Carousel',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_rounded),
             label: 'Add User',
           ),
         ],
